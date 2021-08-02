@@ -15,6 +15,10 @@
     "serve": "npx webpack serve --mode=development"
   },
   "author": "David Jensenius, based on Tune.js by Andrew Bernstein & Ben Taylor",
+	"np": {
+		"yarn": false,
+		"contents": "dist"
+	},
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.14.8",
