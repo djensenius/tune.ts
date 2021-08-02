@@ -1,4 +1,5 @@
 src/tune/systems.ts
+contrib/tune.js
 dist/
 docs/
 .eslintrs.js
