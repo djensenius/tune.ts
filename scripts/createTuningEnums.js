@@ -42,11 +42,11 @@ fs.readFile('./src/tunings-pretty.json', (err, data) => {
     enumValue = _.camelCase(enumValue);
     fileString += `  ${enumValue}: `;
     fileString += `${JSON.stringify(values[i])},\n`;
-    enumString +=`  ${enumValue} = '${enumValue}',\n`;
+    enumString += `  ${enumValue} = '${enumValue}',\n`;
     tuningMD += `|${enumValue} |${values[i].description}|\n`;
   }
   fileString += '};\n';
-  enumString += '};\n'
+  enumString += '};\n';
   fileString += enumString;
   fs.writeFile('./src/tune/systems.ts', fileString, function (writeErr) {
     if (err) {
