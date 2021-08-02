@@ -1,0 +1,8 @@
+{
+  "out": "docs",
+  "exclude": [
+    "**/__tests__/**",
+    "**/contrib/**",
+    "src/index.ts"
+  ]
+}

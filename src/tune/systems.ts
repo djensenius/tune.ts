@@ -1,5 +1,8 @@
 import { Tuning } from './tune.js'
 
+/**
+ * System the full tuning system, frequencies, and so on.
+ */
 export const System: Record<string, Tuning> = {
   fiveNineteen: {"description":"5 out of 19-tET","frequencies":[261.6255653006,302.72962012827,350.29154279212,405.32593044476,469.00678383895,523.2511306012],"name":"05-19"},
   fiveTwentyTwo: {"description":"Pentatonic \"generator\" of 09-22","frequencies":[261.6255653006,306.26409645618,358.51885197895,394.05926325844,461.29362042034,523.2511306012],"name":"05-22"},
@@ -3306,6 +3309,10 @@ export const System: Record<string, Tuning> = {
   zwolle: {"description":"Henri Arnaut De Zwolle. Pythagorean on G flat.","frequencies":[261.6255653006,275.62199471997,294.32876096318,310.07474405997,331.11985608357,348.83408706747,367.49599295996,392.4383479509,413.43299207996,441.49314144476,465.11211608996,496.67978412536,523.2511306012],"name":"zwolle"},
   zwolle2: {"description":"Henri Arnaut De Zwolle's modified meantone tuning (c. 1440)","frequencies":[261.6255653006,273.37431312998,292.50627485027,311.68386704488,327.03195662575,349.91912034749,365.63284274659,391.22147055517,408.78994578219,437.39890198442,467.04206359353,489.02683710225,523.2511306012],"name":"zwolle2"},
 };
+
+/**
+ * Enum of tunings, used with loadScale
+ */
 export enum TuningSystem {
   fiveNineteen = 'fiveNineteen',
   fiveTwentyTwo = 'fiveTwentyTwo',
