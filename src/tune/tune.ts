@@ -22,6 +22,9 @@ export interface Mode {
   input: Input;
 }
 
+/**
+ * Tune class for all your tuning needs
+*/
 export default class Tune {
   scale: number[];
 
@@ -37,14 +40,27 @@ export default class Tune {
     this.stepIn = 0;
     this.mode = {
       output: Output.Frequency,
-      input: Input.Step,
+      input: Input.MIDI,
     };
   }
 
+  /**
+   * Set the tonic for all your compositonal needs.
+   * @param newTonic number, default tonic is 440
+   */
   tonicize(newTonic: number): void {
     this.tonic = newTonic;
   }
 
+  setOutput(newMode: Output): void {
+    this.mode.output = newMode;
+  }
+
+  /**
+   * Get value of note
+   * @param input number of note
+   * @returns value of note
+   */
   note(input: number, octave: number): number {
     let newvalue;
 
@@ -54,8 +70,6 @@ export default class Tune {
       newvalue = this.ratio(input, octave);
     } else if (this.mode.output === Output.MIDI) {
       newvalue = this.MIDI(input, octave);
-    } else {
-      newvalue = this.frequency(input, octave);
     }
     return newvalue;
   }
@@ -121,7 +135,7 @@ export default class Tune {
     }
   }
 
-  static search(letters: string): string[] {
+  public static search(letters: string): string[] {
     const possible = [];
     const keys = Object.keys(System);
     for (let i = 0; i < keys.length; i += 1) {
