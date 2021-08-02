@@ -39,8 +39,6 @@ export default class Tune {
       output: Output.Frequency,
       input: Input.Step,
     };
-    // console.log(System);
-    // console.log(System['five_nineteen']);
   }
 
   tonicize(newTonic: number): void {
@@ -53,9 +51,9 @@ export default class Tune {
     if (this.mode.output === Output.Frequency) {
       newvalue = this.frequency(input, octave);
     } else if (this.mode.output === Output.Ratio) {
-      // newvalue = this.ratio(input, octave);
+      newvalue = this.ratio(input, octave);
     } else if (this.mode.output === Output.MIDI) {
-      // newvalue = this.MIDI(input, octave);
+      newvalue = this.MIDI(input, octave);
     } else {
       newvalue = this.frequency(input, octave);
     }
@@ -90,12 +88,56 @@ export default class Tune {
     return freq;
   }
 
+  ratio(stepIn: number, octaveIn:number): number {
+    if (this.mode.input === Input.MIDI) {
+      this.stepIn += 60;
+    }
+
+    let octave = Math.floor(stepIn / this.scale.length);
+
+    if (octaveIn) {
+      octave += octaveIn;
+    }
+
+    const scaleDegree = stepIn % this.scale.length;
+    let ratio = (2 ** octave) * this.scale[scaleDegree];
+    ratio = Math.floor(ratio * 100000000000) / 100000000000;
+
+    return ratio;
+  }
+
+  MIDI(stepIn: number, octaveIn: number): number {
+    const newvalue = this.frequency(stepIn, octaveIn);
+    let n = 69 + (12 * (Math.log(newvalue / 440) / Math.log(2)));
+    n = Math.floor(n * 1000000000) / 1000000000;
+    return n;
+  }
+
   loadScale(name: TuningSystem): void {
     const freqs = System[name].frequencies;
-    console.warn(freqs);
     this.scale = [];
     for (let i = 0; i < freqs.length - 1; i += 1) {
       this.scale.push(freqs[i] / freqs[0]);
     }
+  }
+
+  static search(letters: string): string[] {
+    const possible = [];
+    const keys = Object.keys(System);
+    for (let i = 0; i < keys.length; i += 1) {
+      const key = keys[i];
+      if (key.toLowerCase().indexOf(letters.toLowerCase()) !== -1) {
+        possible.push(key);
+      }
+    }
+    return possible;
+  }
+
+  chord(midis: number[]): number[] {
+    const output = [];
+    for (let i = 0; i < midis.length; i += 1) {
+      output.push(this.note(midis[i], 0));
+    }
+    return output;
   }
 }

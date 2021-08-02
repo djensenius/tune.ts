@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.ts',
   mode: 'production',
-  // sourceMap: true,
+  // devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -15,12 +14,6 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'index.html',
-      inject: 'body',
-    }),
-  ],
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
