@@ -22,6 +22,9 @@ export interface Mode {
   input: Input;
 }
 
+/**
+ * Tune class for all your tuning needs
+*/
 export default class Tune {
   scale: number[];
 
@@ -41,6 +44,10 @@ export default class Tune {
     };
   }
 
+  /**
+   * Set the tonic for all your compositonal needs.
+   * @param newTonic number, default tonic is 440
+   */
   tonicize(newTonic: number): void {
     this.tonic = newTonic;
   }
@@ -49,6 +56,11 @@ export default class Tune {
     this.mode.output = newMode;
   }
 
+  /**
+   * Get value of note
+   * @param input number of note
+   * @returns value of note
+   */
   note(input: number, octave: number): number {
     let newvalue;
 
