@@ -1,6 +1,6 @@
 {
   "name": "tune-ts",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "TypeScript port of Tune.JS",
   "scripts": {
     "docs": "npx typedoc --options ./typedoc.json src; touch docs/.nojekyll",
@@ -19,10 +19,7 @@
     "yarn": false,
     "contents": "dist"
   },
-  "files": [
-    "dist"
-  ],
-  "main": "dist/tune.js",
+  "main": "dist/tune",
   "funding": {
     "url": "https://github.com/sponsors/djensenius"
   },
