@@ -26,8 +26,12 @@ module.exports = {
     disableHostCheck: true,
     port: 9000,
   },
+  context: __dirname,
   output: {
     filename: 'tune.js',
     path: path.resolve(__dirname, 'dist'),
+    library: 'Tune',
+    libraryTarget: 'umd',
+    globalObject: 'typeof self !== \'undefined\' ? self : this',
   },
 };

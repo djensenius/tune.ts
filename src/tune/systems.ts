@@ -1,4 +1,8 @@
-import { Tuning } from '../index';
+export interface Tuning {
+  name: string;
+  description: string;
+  frequencies: number[];
+}
 
 /**
  * System the full tuning system, frequencies, and so on.

@@ -19,8 +19,9 @@
     "yarn": false,
     "contents": "dist"
   },
-  "main": "dist/tune",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/tune/src/index.d.ts",
+  "module": "dist/tune.js",
   "funding": {
     "url": "https://github.com/sponsors/djensenius"
   },

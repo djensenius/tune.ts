@@ -1,10 +1,4 @@
-import { System, TuningSystem } from './tune/systems';
-
-export interface Tuning {
-  name: string;
-  description: string;
-  frequencies: number[];
-}
+import { System, Tuning, TuningSystem } from './tune/systems';
 
 export enum Output {
   Frequency,
@@ -155,3 +149,9 @@ export default class Tune {
     return output;
   }
 }
+
+export {
+  System,
+  Tuning,
+  TuningSystem,
+};
