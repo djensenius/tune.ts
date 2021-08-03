@@ -20,6 +20,7 @@
     "contents": "dist"
   },
   "main": "dist/tune",
+	"types": "dist/src/index.d.ts",
   "funding": {
     "url": "https://github.com/sponsors/djensenius"
   },
