@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-syntax */
-import Tune from '../tune';
-import TuneJS from '../../../contrib/tune';
-import { System } from '../systems';
+import Tune from '../index';
+import TuneJS from '../../contrib/tune';
+import { System } from '../tune/systems';
 
 describe('Tune', () => {
   it('should construct tune with default values', () => {

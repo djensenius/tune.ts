@@ -1,4 +1,4 @@
-import { Tuning } from './tune.js'
+import { Tuning } from '../index';
 
 /**
  * System the full tuning system, frequencies, and so on.
