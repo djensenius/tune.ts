@@ -22,6 +22,7 @@
   "files": [
     "dist"
   ],
+  "main": "dist/tune.js",
   "funding": {
     "url": "https://github.com/sponsors/djensenius"
   },
