@@ -1,5 +1,5 @@
 {
-  "name": "tune.ts",
+  "name": "tune-ts",
   "version": "0.9.2",
   "description": "TypeScript port of Tune.JS",
   "scripts": {
