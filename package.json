@@ -19,6 +19,8 @@
     "yarn": false,
     "contents": "dist"
   },
+  "files": [ "dist" ],
+  "funding": "https://github.com/sponsors/djensenius",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.14.8",
