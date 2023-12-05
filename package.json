@@ -1,6 +1,6 @@
 {
   "name": "tune-ts",
-  "version": "0.9.10",
+  "version": "0.9.11",
   "description": "TypeScript port of Tune.JS",
   "scripts": {
     "docs": "npx typedoc --options ./typedoc.json src; touch docs/.nojekyll",
